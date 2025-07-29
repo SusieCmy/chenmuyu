@@ -1,0 +1,44 @@
+/*
+ * @Date: 2025-07-07 10:29:58
+ * @LastEditors: cmy && 1732728869@qq.com
+ * @LastEditTime: 2025-07-25 09:00:01
+ * @FilePath: \susie-cmy\src\app\globals.css
+ * @Description: 强者都是孤独的
+ */
+
+@import "tailwindcss";
+
+@plugin "daisyui" {
+  prefix: "cmy-";
+  themes: light --default, dark --prefersdark;
+}
+
+[data-theme="light"] {
+  --color-neutral-cmy: var(--color-neutral-content);
+  scrollbar-color: #6366f1 #e5e7eb;
+}
+
+[data-theme="dark"] {
+  --color-neutral-cmy: var(--color-neutral);
+  scrollbar-color: #8b5cf6 #374151;
+}
+
+:root {
+  .cmy-header-border {
+    border-color: var(--color-neutral-cmy);
+  }
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
