@@ -7,12 +7,11 @@
  */
 "use client";
 export default function UserTimeline() {
-
-    return (
-        <div className="h-96">
-            <progress className="cmy-progress cmy-progress-info w-56" value="100" max="100"></progress>
-        </div>
-    )
+  return (
+    <div className="h-96">
+      <progress className="cmy-progress cmy-progress-info w-56" value="100" max="100"></progress>
+    </div>
+  )
 }
 
 

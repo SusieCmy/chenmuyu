@@ -89,17 +89,17 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <header className="sticky top-2 z-50">
-            <StructuredData/>
+            <StructuredData />
             <Header />
           </header>
           <main className="max-w-screen-xl mx-auto">{children}</main>
 
           <footer className="cmy-footer cmy-footer-horizontal cmy-footer-center bg-base-200 text-base-content rounded p-10">
             <nav className="grid grid-flow-col gap-4">
-              <a className="link link-hover">About us</a>
-              <a className="link link-hover">Contact</a>
-              <a className="link link-hover">Jobs</a>
-              <a className="link link-hover">Press kit</a>
+              <Link href={"/blog"}>日记</Link>
+              <Link href={"/projects"}>历程</Link>
+              <Link href={"/about"}>关于我</Link>
+              <Link href={"/contact"}>联系我</Link>
             </nav>
             <nav>
               <div className="grid grid-flow-col gap-4">

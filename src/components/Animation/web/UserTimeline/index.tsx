@@ -23,13 +23,13 @@ export default function UserTimeline() {
     const containers = utils.$(".cmy-scroll-container");
     const timelines = utils.$('.cmy-timeline');
     const cardsAnimation = animate(timelines, {
-      scale: [1, .5, 1]
+      scale: [1, 0.5, 10]
     });
     onScroll({
       target: containers,
       enter: 'top',
       leave: 'bottom',
-      // debug: true,
+      debug: true,
       sync: .1,
       onUpdate: (e) => {
         setPrevProgress(e.prevProgress)
@@ -56,9 +56,9 @@ export default function UserTimeline() {
       </div>
       <div className="h-[400lvh] relative cmy-scroll-container">
         <div className="sticky left-0 top-1/12 h-[90lvh]">
-          <progress className="cmy-progress cmy-progress-accent absolute left-0 bottom-0" value={prevProgress * 100} max="100"></progress>
-          <div className="cmy-timeline mt-4 w-20 h-20 text-sm bg-gray-600">
-          </div>
+          <progress className="w-[83lvh] cmy-progress cmy-progress-accent absolute left-0 top-0 transform rotate-90 origin-left" value={prevProgress * 100} max="100"></progress>
+          {/* <div className="cmy-timeline mt-4 w-full h-[50lvh] text-sm bg-gray-600">
+          </div> */}
         </div>
       </div>
     </div>
