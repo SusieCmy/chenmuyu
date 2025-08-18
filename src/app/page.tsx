@@ -11,12 +11,12 @@ import UserTimeline from "@/components/Animation/web/UserTimeline"
 import UserParallax from "@/components/Animation/web/UserParallax"
 
 export const metadata: Metadata = {
-  title: '陈慕宇 - 长沙前端开发工程师 | iaxixi.com',
-  description: '陈慕宇，长沙资深Web前端开发工程师，专注于React、Next.js、JavaScript等现代前端技术开发，提供专业的前端解决方案',
+  title: '陈慕宇 - 前端开发工程师 | iaxixi.com',
+  description: '陈慕宇，Web前端开发工程师，专注于React、Next.js、JavaScript等现代前端技术开发，提供专业的前端解决方案',
   keywords: [
-    '陈慕宇', 'iaxixi', '前端开发工程师', '长沙前端开发', 
+    '陈慕宇', 'iaxixi', '前端开发工程师', 
     'React开发', 'Next.js', 'JavaScript', 'TypeScript', 'Web开发',
-    '前端技术专家', '长沙程序员'
+    '前端技术专家', '程序员'
   ],
   authors: [{ name: '陈慕宇', url: 'https://www.iaxixi.com' }],
   creator: '陈慕宇',
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
     type: 'profile',
     locale: 'zh_CN',
     url: 'https://www.iaxixi.com',
-    title: '陈慕宇 - 长沙前端开发工程师',
-    description: '长沙资深Web前端开发工程师，专注现代前端技术',
+    title: '陈慕宇 - 前端开发工程师',
+    description: 'Web前端开发工程师，专注现代前端技术',
     siteName: 'iaxixi - 陈慕宇',
     images: [
       {
@@ -39,8 +39,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '陈慕宇 - 长沙前端开发工程师',
-    description: '长沙资深Web前端开发工程师',
+    title: '陈慕宇 - 前端开发工程师',
+    description: 'Web前端开发工程师',
     images: ['/cmy.jpg'],
   },
   alternates: {
