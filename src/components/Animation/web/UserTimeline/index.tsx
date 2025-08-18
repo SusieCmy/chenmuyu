@@ -29,7 +29,7 @@ export default function UserTimeline() {
       target: containers,
       enter: 'top',
       leave: 'bottom',
-      debug: true,
+      // debug: true,
       sync: .1,
       onUpdate: (e) => {
         setPrevProgress(e.prevProgress)
