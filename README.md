@@ -1,4 +1,4 @@
-# 🌟 Susie CMY - 个人作品集网站
+# 🌟 Susie CMY - 个人网站
 
 一个现代化的个人作品集网站，采用 Next.js 15 和 TypeScript 构建，具有丰富的动画效果和响应式设计。
 
