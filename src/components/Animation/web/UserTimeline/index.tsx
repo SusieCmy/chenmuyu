@@ -1,9 +1,12 @@
 /*
- * @Date: 2025-07-17 11:22:23
- * @LastEditors: cmy && 1732728869@qq.com
- * @LastEditTime: 2025-07-29 11:43:13
+ * @Author: Susie 1732728869@qq.com
+ * @Date: 2025-08-08 21:09:39
+ * @LastEditors: Susie 1732728869@qq.com
+ * @LastEditTime: 2025-08-19 22:17:03
  * @FilePath: \susie-cmy\src\components\Animation\web\UserTimeline\index.tsx
  * @Description: 强者都是孤独的
+ * 
+ * Copyright (c) 2025 by 1732728869@qq.com, All Rights Reserved. 
  */
 
 "use client";
