@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 import type { NextConfig } from 'next'
-const nextConfig: NextConfig  = {
-  distDir: 'dist',
+const nextConfig: NextConfig = {
+  // distDir: 'dist',
   generateEtags: false,
   experimental: {
     serverComponentsHmrCache: false, // defaults to true
