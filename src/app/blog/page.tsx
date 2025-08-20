@@ -2,7 +2,7 @@
  * @Author: Susie 1732728869@qq.com
  * @Date: 2025-08-18 20:45:19
  * @LastEditors: Susie 1732728869@qq.com
- * @LastEditTime: 2025-08-19 22:16:42
+ * @LastEditTime: 2025-08-20 20:22:42
  * @FilePath: \susie-cmy\src\app\blog\page.tsx
  * @Description: 强者都是孤独的
  * 
@@ -13,6 +13,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { getAllPosts } from '@/lib/blog'
 import UserTextClone from '@/components/Animation/web/UserTextClone';
+import { getTagStyle } from '@/lib/tagStyles'
 
 export const metadata: Metadata = {
   title: '技术博客',
@@ -41,43 +42,61 @@ export default function Blog() {
           </h1>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-1">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {posts.map((post) => (
             <article
               key={post.slug}
-              className="group border rounded-lg p-6 hover:shadow-lg transition-all duration-300 hover:border-blue-600"
+              className="group relative bg-base-100 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] border border-base-300 overflow-hidden hover:border-primary/30"
             >
-              <Link href={`/blog/${post.slug}`} className="block">
-                <div className="flex flex-col h-full">
-                  <div className="flex-1">
-                    <h2 className="text-xl font-semibold mb-3 transition-colors">
+              <Link href={`/blog/${post.slug}`} className="block h-full">
+                <div className="p-6 flex flex-col h-full">
+                  {/* 标题和描述区域 */}
+                  <div className="flex-1 mb-6">
+                    <h2 className="text-xl font-bold mb-3 text-base-content group-hover:text-primary transition-colors duration-300 leading-tight">
                       {post.title}
                     </h2>
-                    <p className="text-gray-600 mb-4 line-clamp-2">
+                    <p className="text-base-content/70 text-sm leading-relaxed line-clamp-3">
                       {post.description}
                     </p>
                   </div>
 
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  {/* 标签区域 */}
+                  <div className="flex flex-wrap gap-2 mb-6">
                     {post.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-2 py-1 text-xs font-medium  rounded-full"
+                        className={`px-3 py-1 text-xs font-semibold rounded-full transition-transform duration-200 hover:scale-105 ${getTagStyle(tag)}`}
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
 
-                  <div className="flex items-center justify-between text-sm ">
-                    <time dateTime={post.date}>
+                  {/* 底部信息区域 */}
+                  <div className="flex items-center justify-between pt-4 border-t border-base-300">
+                    <time
+                      dateTime={post.date}
+                      className="text-xs text-base-content/60 font-medium"
+                    >
                       {new Date(post.date).toLocaleDateString('zh-CN', {
                         year: 'numeric',
                         month: 'long',
                         day: 'numeric',
                       })}
                     </time>
-                    <span>约 {post.readingTime} 分钟阅读</span>
+                    <div className="flex items-center gap-1 text-xs text-base-content/60">
+                      <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
+                      </svg>
+                      <span>{post.readingTime} 分钟</span>
+                    </div>
+                  </div>
+
+                  {/* 悬停箭头指示器 */}
+                  <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0">
+                    <svg className="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                    </svg>
                   </div>
                 </div>
               </Link>
