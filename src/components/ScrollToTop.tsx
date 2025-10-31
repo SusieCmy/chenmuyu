@@ -26,7 +26,7 @@ export default function ScrollToTop() {
   return (
     <button
       onClick={scrollToTop}
-      className="fixed bottom-8 right-8 z-40 btn btn-circle btn-primary shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 xl:bottom-32"
+      className="cursor-target fixed bottom-8 right-8 z-40 btn btn-circle btn-primary shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 xl:bottom-32"
       title="回到顶部"
     >
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
