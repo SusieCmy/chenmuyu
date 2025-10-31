@@ -6,7 +6,7 @@
  * @Description: 强者都是孤独的
  */
 import { Metadata } from 'next'
-import UserInfoPage from "@/components/UserInfo";
+// import UserInfoPage from "@/components/UserInfo";
 import UserTimeline from "@/components/Animation/web/UserTimeline"
 import UserParallax from "@/components/Animation/web/UserParallax"
 

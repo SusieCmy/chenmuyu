@@ -11,16 +11,9 @@
 
 "use client";
 import { utils, onScroll, animate } from 'animejs';
-import { useEffect, useRef, useState, useMemo } from "react";
-import useThemeStore from "@/store/useThemeStore"
+import { useEffect, useState } from "react";
 export default function UserTimeline() {
   const [prevProgress, setPrevProgress] = useState<number>(0)
-  const homeVideoRef = useRef(null!)
-  const { themeType } = useThemeStore()
-  const videoSrc = useMemo(() =>
-    themeType === 'dark' ? './ye1' : './hua1',
-    [themeType]
-  )
 
   useEffect(() => {
     const containers = utils.$(".cmy-scroll-container");
