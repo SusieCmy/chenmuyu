@@ -21,6 +21,7 @@
     "@types/react-syntax-highlighter": "^15.5.13",
     "animejs": "^4.0.2",
     "gray-matter": "^4.0.3",
+    "gsap": "^3.13.0",
     "next": "15.3.5",
     "react": "^19.0.0",
     "react-markdown": "^10.1.0",

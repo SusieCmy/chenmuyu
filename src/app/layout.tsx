@@ -11,7 +11,8 @@ import Link from "next/link"
 import "./globals.css";
 import Header from "@/components/Header";
 import ThemeProvider from "@/components/ThemeProvider";
-import StructuredData from '@/components/StructuredData'
+import StructuredData from '@/components/StructuredData';
+import TargetCursor from "@/components/TargetCursor";
 
 export const metadata: Metadata = {
   title: {
@@ -80,14 +81,18 @@ export default function RootLayout({
             <StructuredData />
             <Header />
           </header>
+          <TargetCursor 
+            spinDuration={2}
+            hideDefaultCursor={true}
+          />
           <main className="max-w-screen-xl mx-auto">{children}</main>
 
           <footer className="cmy-footer cmy-footer-horizontal cmy-footer-center bg-base-200 text-base-content rounded p-10">
             <nav className="grid grid-flow-col gap-4">
-              <Link href={"/blog"}>日记</Link>
-              <Link href={"/projects"}>历程</Link>
-              <Link href={"/about"}>关于我</Link>
-              <Link href={"/contact"}>联系我</Link>
+              <Link href={"/blog"} className="cursor-target">日记</Link>
+              <Link href={"/projects"} className="cursor-target">历程</Link>
+              <Link href={"/about"} className="cursor-target">关于我</Link>
+              <Link href={"/contact"} className="cursor-target">联系我</Link>
             </nav>
             <nav>
               <div className="grid grid-flow-col gap-4">
