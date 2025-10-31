@@ -15,35 +15,35 @@ import StructuredData from '@/components/StructuredData'
 
 export const metadata: Metadata = {
   title: {
-    default: '陈慕宇 - iaxixi.com',
-    template: '%s | 陈慕宇 - iaxixi.com'
+    default: 'chenmuyu - iaxixi.com',
+    template: '%s | chenmuyu - iaxixi.com'
   },
-  description: '陈慕宇的个人网站 iaxixi.com，分享技术、生活和个人见解',
-  keywords: ['陈慕宇', 'iaxixi', '个人网站', '技术博客'],
-  authors: [{ name: '陈慕宇', url: 'https://www.iaxixi.com' }],
-  creator: '陈慕宇',
-  publisher: '陈慕宇',
+  description: 'chenmuyu的个人网站 iaxixi.com，分享技术、生活和个人见解',
+  keywords: ['chenmuyu', 'iaxixi', '个人网站', '技术博客'],
+  authors: [{ name: 'chenmuyu', url: 'https://www.iaxixi.com' }],
+  creator: 'chenmuyu',
+  publisher: 'chenmuyu',
   metadataBase: new URL('https://www.iaxixi.com'),
   openGraph: {
     type: 'website',
     locale: 'zh_CN',
     url: 'https://www.iaxixi.com',
-    title: '陈慕宇 - iaxixi.com',
-    description: '陈慕宇的个人网站，分享技术与生活',
-    siteName: 'iaxixi - 陈慕宇',
+    title: 'chenmuyu - iaxixi.com',
+    description: 'chenmuyu的个人网站，分享技术与生活',
+    siteName: 'iaxixi - chenmuyu',
     images: [
       {
         url: '/cmy.jpg',
         width: 1200,
         height: 630,
-        alt: '陈慕宇 - iaxixi.com',
+        alt: 'chenmuyu - iaxixi.com',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '陈慕宇 - iaxixi.com',
-    description: '陈慕宇的个人网站',
+    title: 'chenmuyu - iaxixi.com',
+    description: 'chenmuyu的个人网站',
     images: ['/cmy.jpg'],
   },
   robots: {

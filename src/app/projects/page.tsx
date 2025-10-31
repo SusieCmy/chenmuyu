@@ -10,11 +10,11 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: '历程',
-  description: '我是陈慕宇，一名热爱技术的前端开发工程师，专注于现代Web开发技术',
-  keywords: ['陈慕宇', '前端工程师', '个人简介', 'Web开发'],
+  description: '我是chenmuyu，一名热爱技术的前端开发工程师，专注于现代Web开发技术',
+  keywords: ['chenmuyu', '前端工程师', '个人简介', 'Web开发'],
   openGraph: {
-    title: '历程 | 陈慕宇 - iaxixi.com',
-    description: '了解陈慕宇的技术背景、工作经历和个人兴趣',
+    title: '历程 | chenmuyu - iaxixi.com',
+    description: '了解chenmuyu的技术背景、工作经历和个人兴趣',
     type: 'profile',
     images: ['/cmy.jpg'],
   },

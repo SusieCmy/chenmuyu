@@ -75,7 +75,7 @@ export default function Header() {
 
       <div className="flex flex-1 items-center h-full">
         {/* <div className='relative h-full w-20'> */}
-        <Link href={'/'} title="陈慕宇">
+        <Link href={'/'} title="chenmuyu">
           <div className='absolute top-3 left-0 w-48'>
             <svg viewBox="0 0 500 100">
               <g stroke="#fff" fill="none" fillRule="evenodd" strokeLinecap="round" strokeLinejoin="round" strokeWidth="8">

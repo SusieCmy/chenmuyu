@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   description: '分享前端开发经验、技术心得和学习笔记',
   keywords: ['技术博客', '前端开发', 'React', 'Next.js', 'JavaScript', 'TypeScript'],
   openGraph: {
-    title: '技术博客 | 陈慕宇 - iaxixi.com',
+    title: '技术博客 | chenmuyu - iaxixi.com',
     description: '分享前端开发经验、技术心得和学习笔记',
     type: 'website',
     images: ['/cmy.jpg'],

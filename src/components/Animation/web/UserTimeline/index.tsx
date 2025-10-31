@@ -46,7 +46,7 @@ export default function UserTimeline() {
   }, []);
   return (
     <div className="">
-      <div className="">
+      {/* <div className="">
         <div className="relative">
           <div className="absolute top-0 left-0 w-full h-1 backdrop-blur-md"></div>
           <div className="absolute bottom-0 left-0 w-full h-1 backdrop-blur-md"></div>
@@ -56,7 +56,7 @@ export default function UserTimeline() {
             <video ref={homeVideoRef} src={`./${videoSrc}.mp4`} className="w-auto" autoPlay loop muted></video>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="h-[400lvh] relative cmy-scroll-container">
         <div className="sticky left-0 top-1/12 h-[90lvh]">
           <progress className="w-[83lvh] cmy-progress cmy-progress-accent absolute left-0 top-0 transform rotate-90 origin-left" value={prevProgress * 100} max="100"></progress>

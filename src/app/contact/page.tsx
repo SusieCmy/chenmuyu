@@ -9,11 +9,11 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: '联系我',
-  description: '联系陈慕宇，讨论技术合作、项目开发或技术交流',
-  keywords: ['联系方式', '技术合作', '项目合作', '陈慕宇'],
+  description: '联系chenmuyu，讨论技术合作、项目开发或技术交流',
+  keywords: ['联系方式', '技术合作', '项目合作', 'chenmuyu'],
   openGraph: {
-    title: '联系我 | 陈慕宇 - iaxixi.com',
-    description: '与陈慕宇取得联系，探讨技术问题或合作机会',
+    title: '联系我 | chenmuyu - iaxixi.com',
+    description: '与chenmuyu取得联系，探讨技术问题或合作机会',
     type: 'website',
   },
   alternates: {

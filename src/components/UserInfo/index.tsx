@@ -42,7 +42,7 @@ const UserInfoPage = () => {
       .sync(circleAnimation, 450)
   }, []);
   return (
-    <div className="cmy-stats cmy-shadow w-full cmy-stats-vertical md:!cmy-stats-horizontal lg:flex min-w-screen-xl md:grid md:grid-cols-1" data-tip="陈慕宇">
+    <div className="cmy-stats cmy-shadow w-full cmy-stats-vertical md:!cmy-stats-horizontal lg:flex min-w-screen-xl md:grid md:grid-cols-1" data-tip="chenmuyu">
       <div className="cmy-stat">
         <div className="cmy-stat-figure text-primary">
           <svg
@@ -98,7 +98,7 @@ const UserInfoPage = () => {
         <div className="cmy-stat-figure text-secondary">
           <div className="cmy-avatar cmy-avatar-online">
             <div className="w-16 rounded-full">
-              <Image alt="陈慕宇" src={ProfileImage} />
+              <Image alt="chenmuyu" src={ProfileImage} />
             </div>
           </div>
         </div>

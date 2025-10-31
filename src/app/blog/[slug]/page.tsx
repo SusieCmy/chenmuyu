@@ -39,22 +39,22 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   }
 
   return {
-    title: `${post.title} | 陈慕宇的技术博客`,
+    title: `${post.title} | chenmuyu的技术博客`,
     description: post.description,
     keywords: post.tags,
-    authors: [{ name: '陈慕宇', url: 'https://www.iaxixi.com' }],
+    authors: [{ name: 'chenmuyu', url: 'https://www.iaxixi.com' }],
     openGraph: {
-      title: `${post.title} | 陈慕宇的技术博客`,
+      title: `${post.title} | chenmuyu的技术博客`,
       description: post.description,
       type: 'article',
       publishedTime: post.date,
-      authors: ['陈慕宇'],
+      authors: ['chenmuyu'],
       tags: post.tags,
       images: ['/cmy.jpg'],
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${post.title} | 陈慕宇的技术博客`,
+      title: `${post.title} | chenmuyu的技术博客`,
       description: post.description,
       images: ['/cmy.jpg'],
     },
@@ -88,12 +88,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     "image": "https://www.iaxixi.com/cmy.jpg",
     "author": {
       "@type": "Person",
-      "name": "陈慕宇",
+      "name": "chenmuyu",
       "url": "https://www.iaxixi.com"
     },
     "publisher": {
       "@type": "Person",
-      "name": "陈慕宇",
+      "name": "chenmuyu",
       "logo": {
         "@type": "ImageObject",
         "url": "https://www.iaxixi.com/cmy.jpg"

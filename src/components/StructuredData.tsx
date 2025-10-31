@@ -9,10 +9,10 @@ export default function StructuredData() {
     const personData = {
       "@context": "https://schema.org",
       "@type": "Person",
-      "name": "陈慕宇",
+      "name": "chenmuyu",
       "url": "https://www.iaxixi.com",
       "image": "https://www.iaxixi.com/cmy.jpg",
-      "description": "陈慕宇，iaxixi.com网站创建者",
+      "description": "chenmuyu，iaxixi.com网站创建者",
       "knowsAbout": ["Web Development", "Frontend Development", "Next.js"],
       "alumniOf": {
         "@type": "Organization",
@@ -27,13 +27,13 @@ export default function StructuredData() {
     const websiteData = {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "name": "iaxixi - 陈慕宇",
+      "name": "iaxixi - chenmuyu",
       "url": "https://www.iaxixi.com",
       "author": {
         "@type": "Person",
-        "name": "陈慕宇"
+        "name": "chenmuyu"
       },
-      "description": "陈慕宇的个人网站",
+      "description": "chenmuyu的个人网站",
       "inLanguage": "zh-CN"
     }
   
