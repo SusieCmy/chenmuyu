@@ -1,4 +1,4 @@
-# 🌟 Chen Muyu - 个人作品集网站
+# 🌟 Chen Muyu - 个人网站
 
 一个现代化的个人作品集网站，采用 Next.js 15 和 TypeScript 构建，展示个人技能、项目经验和技术博客。
 
