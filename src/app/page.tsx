@@ -17,9 +17,7 @@ export const metadata: Metadata = {
   title: 'chenmuyu - 前端开发工程师 | iaxixi.com',
   description: 'chenmuyu，Web前端开发工程师，专注于现代前端技术开发，提供专业的前端解决方案',
   keywords: [
-    'chenmuyu', 'iaxixi', '前端开发工程师',
-    'React开发', 'Next.js', 'JavaScript', 'TypeScript', 'Web开发',
-    'Vue', 'Pinia', '前端开发工程师', '程序员'
+    'chenmuyu', '前端开发', 'iaxixi', '开发工程师', '博客', '项目经历', '联系我', '关于我'
   ],
   authors: [{ name: 'chenmuyu', url: 'https://www.iaxixi.com' }],
   creator: 'chenmuyu',
@@ -56,16 +54,17 @@ export default function Index() {
     <div className="font-[family-name:var(--font-geist-sans)]">
       {/* <UserInfoPage /> */}
       <div className='w-full flex mt-4'>
-        <div className="w-1/3">
+        <div>
           <Image
             src="/QQ.png"
             alt="chenmuyu"
+            priority
             width={180}
             height={180}
             className="rounded-xl mx-auto mb-6 border-4 shadow-lg"
           />
         </div>
-        <div className="w-2/3">
+        <div>
           <h1 className="text-2xl font-bold mb-4 cursor-target w-24">
             <UserTextClone propsText="网站介绍"></UserTextClone>
           </h1>
@@ -77,7 +76,9 @@ export default function Index() {
             cursorCharacter="_"
           />
         </div>
+        <div>
 
+        </div>
       </div>
       <UserTimeline />
       <UserParallax />
