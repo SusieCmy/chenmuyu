@@ -10,17 +10,24 @@
  */
 "use client";
 import { createTimeline, stagger, text } from 'animejs';
-import { useEffect } from "react";
+import { useEffect, useRef, useId } from "react";
 
 export default function UserTextClone({ propsText }: { propsText: string }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const uniqueId = useId().replace(/:/g, '-');
+
   useEffect(() => {
-    const { chars } = text.split('p', {
+    if (!containerRef.current) return;
+
+    const selector = `#text-${uniqueId}`;
+    const { chars } = text.split(selector, {
       chars: {
         wrap: 'clip',
         clone: 'bottom'
       },
     });
-    createTimeline()
+
+    const timeline = createTimeline()
       .add(chars, {
         y: '-100%',
         loop: true,
@@ -28,12 +35,16 @@ export default function UserTextClone({ propsText }: { propsText: string }) {
         duration: 750,
         ease: 'inOut(2)',
       }, stagger(150, { from: 'center' }));
-  })
+
+    return () => {
+      timeline.pause();
+    };
+  }, [propsText, uniqueId]);
 
   return (
-    <div>
+    <div ref={containerRef}>
       <div className="large centered row">
-        <p className="textp">{propsText}</p>
+        <p id={`text-${uniqueId}`} className="textp">{propsText}</p>
       </div>
       <div className="small row"></div>
     </div>

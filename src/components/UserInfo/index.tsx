@@ -35,7 +35,7 @@ const UserInfoPage = () => {
         />
       </div>
       <div className='w-64'>
-        <h1 className="text-2xl font-bold mb-4 cursor-target w-30">
+        <h1 className="text-2xl font-bold mb-4 cursor-target w-32">
           <UserTextClone propsText="个人技术栈"></UserTextClone>
         </h1>
         <div>
