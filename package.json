@@ -18,6 +18,7 @@
     "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
   },
   "dependencies": {
+    "@next/third-parties": "^16.0.1",
     "@types/react-syntax-highlighter": "^15.5.13",
     "animejs": "^4.0.2",
     "gray-matter": "^4.0.3",

@@ -5,10 +5,13 @@
  * @FilePath: \susie-cmy\src\components\UserInfo\index.tsx
  * @Description: 强者都是孤独的
  */
+'use client'
 import Image from 'next/image'
 import TextType from '@/components/TextType'
 import UserTextClone from '@/components/Animation/web/UserTextClone';
 import { getTagStyle } from '@/lib/tagStyles'
+import { sendGAEvent } from '@next/third-parties/google'
+
 const UserInfoPage = () => {
   return (
     <div className='grid grid-cols-[auto_1fr_auto] gap-6 mt-4 items-start'>
@@ -23,7 +26,7 @@ const UserInfoPage = () => {
         />
       </div>
       <div className='min-w-0'>
-        <h1 className="text-2xl font-bold mb-4 cursor-target w-24">
+        <h1 className="text-2xl font-bold mb-4 cursor-target w-24" onClick={() => sendGAEvent('event', 'add', { value: 'xyz' })}>
           <UserTextClone propsText="网站介绍"></UserTextClone>
         </h1>
         <TextType

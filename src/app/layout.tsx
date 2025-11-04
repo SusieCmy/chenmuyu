@@ -13,6 +13,7 @@ import Header from "@/components/Header";
 import ThemeProvider from "@/components/ThemeProvider";
 import StructuredData from '@/components/StructuredData';
 import TargetCursor from "@/components/TargetCursor";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 export const metadata: Metadata = {
   title: {
@@ -81,7 +82,7 @@ export default function RootLayout({
             <StructuredData />
             <Header />
           </header>
-          <TargetCursor 
+          <TargetCursor
             spinDuration={2}
             hideDefaultCursor={true}
           />
@@ -139,6 +140,7 @@ export default function RootLayout({
           </footer>
         </ThemeProvider>
       </body>
+      <GoogleAnalytics gaId="G-ZWJQLWCFS1" />
     </html>
   );
 }
