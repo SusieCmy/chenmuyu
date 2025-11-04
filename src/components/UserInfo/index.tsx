@@ -5,119 +5,54 @@
  * @FilePath: \susie-cmy\src\components\UserInfo\index.tsx
  * @Description: 强者都是孤独的
  */
-"use client";
-import { useEffect } from "react";
-import { utils, createTimeline, animate } from "animejs";
 import Image from 'next/image'
-import GradientText from "@/components/Animation/web/UserColorful"
-import ProfileImage from './cmy.jpg'
+import TextType from '@/components/TextType'
+import UserTextClone from '@/components/Animation/web/UserTextClone';
+import { getTagStyle } from '@/lib/tagStyles'
 const UserInfoPage = () => {
-  const positionName = "WEB前端开发";
-  const workExperience = "嘿嘿";
-  const cmyAge = "呜呜";
-  useEffect(() => {
-    const positionRef = utils.$(".cmy-positionRef");
-    animate(positionRef, {
-      opacity: [0, 0, 1],
-      loop: false,
-      alternate: true,
-    })
-
-    const workExperienceRef = utils.$(".cmy-workExperienceRef");
-    const cmyAgeRef = utils.$(".cmy-ageRef");
-    const tl = createTimeline({ defaults: { duration: 750 } });
-    const circleAnimation = animate(cmyAgeRef, {
-      rotate: {
-        from: '-1turn',
-        delay: 0
-      },
-    });
-    tl.label('start')
-      .add(workExperienceRef, {
-        scale: [
-          { to: 0, ease: 'outExpo', duration: 600 },
-          { to: 1, ease: 'outBounce', duration: 800, delay: 100 }
-        ]
-      }, 300)
-      .sync(circleAnimation, 450)
-  }, []);
   return (
-    <div className="cmy-stats cmy-shadow w-full cmy-stats-vertical md:!cmy-stats-horizontal lg:flex min-w-screen-xl md:grid md:grid-cols-1" data-tip="chenmuyu">
-      <div className="cmy-stat">
-        <div className="cmy-stat-figure text-primary">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            className="inline-block h-8 w-8 stroke-current"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-            ></path>
-          </svg>
-        </div>
-        <div className="cmy-stat-title">职位</div>
-        <div className="cmy-stat-value text-primary">
-          <GradientText
-            colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
-            animationSpeed={8}
-            showBorder={false}
-            className="custom-class"
-          >
-            {positionName}
-          </GradientText>
-        </div>
-        <div className="cmy-stat-desc">Base 长沙</div>
+    <div className='w-full flex mt-4'>
+      <div className='w-1/5'>
+        <Image
+          src="/QQ.png"
+          alt="chenmuyu"
+          priority
+          width={180}
+          height={180}
+          className="rounded-xl mx-auto mb-6 border-4 shadow-lg"
+        />
       </div>
-
-      <div className="cmy-stat">
-        <div className="cmy-stat-figure text-secondary">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            className="inline-block h-8 w-8 stroke-current"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M13 10V3L4 14h7v7l9-11h-7z"
-            ></path>
-          </svg>
-        </div>
-        <div className="cmy-stat-title">工作年限</div>
-        <div className="cmy-stat-value text-secondary cmy-workExperienceRef">{workExperience}</div>
-        <div className="cmy-stat-desc">嘿嘿</div>
+      <div className='w-2/5'>
+        <h1 className="text-2xl font-bold mb-4 cursor-target w-24">
+          <UserTextClone propsText="网站介绍"></UserTextClone>
+        </h1>
+        <TextType
+          text={["欢迎来到陈慕宇的个人网站！我是一名前端开发工程师。专注于现代前端技术。这个网站会记录本人平时使用 / 学习的技术栈以及一些个人的见解。希望你能喜欢这里的内容！"]}
+          typingSpeed={100}
+          pauseDuration={1500}
+          showCursor={true}
+          cursorCharacter="_"
+        />
       </div>
-
-      <div className="cmy-stat">
-        <div className="cmy-stat-figure text-secondary">
-          <div className="cmy-avatar cmy-avatar-online">
-            <div className="w-16 rounded-full">
-              <Image alt="chenmuyu" src={ProfileImage} />
-            </div>
+      <div className='w-2/5'>
+        <h1 className="text-2xl font-bold mb-4 cursor-target w-30">
+          <UserTextClone propsText="个人技术栈"></UserTextClone>
+        </h1>
+        <div>
+          <div className="flex flex-wrap gap-2 mb-6">
+            {['javascript', 'typescript', 'vue', 'vite', 'git'].map((tag) => (
+              <span
+                key={tag}
+                className={`px-3 py-1 text-xs font-semibold rounded-full transition-transform duration-200 hover:scale-105 cursor-target ${getTagStyle(tag)}`}
+              >
+                {tag}
+              </span>
+            ))}
           </div>
         </div>
-        <div className="cmy-stat-title">年龄</div>
-        <div className="cmy-stat-value">{
-          Array.from(cmyAge).map((char, idx) => (
-            <span
-              className="inline-block cmy-ageRef"
-              key={idx}
-            >
-              {char}
-            </span>
-          ))
-        }</div>
-        {/* <div className="cmy-stat-title">Tasks done</div> */}
-        {/* <div className="cmy-stat-desc text-secondary">31 tasks remaining</div> */}
       </div>
     </div>
-  );
+  )
 };
 
 export default UserInfoPage;

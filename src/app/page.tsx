@@ -6,12 +6,9 @@
  * @Description: 强者都是孤独的
  */
 import { Metadata } from 'next'
-// import UserInfoPage from "@/components/UserInfo";
+import UserInfoPage from "@/components/UserInfo";
 import UserTimeline from "@/components/Animation/web/UserTimeline"
 import UserParallax from "@/components/Animation/web/UserParallax"
-import TextType from '@/components/TextType'
-import Image from 'next/image'
-import UserTextClone from '@/components/Animation/web/UserTextClone';
 
 export const metadata: Metadata = {
   title: 'chenmuyu - 前端开发工程师 | iaxixi.com',
@@ -52,34 +49,7 @@ export const metadata: Metadata = {
 export default function Index() {
   return (
     <div className="font-[family-name:var(--font-geist-sans)]">
-      {/* <UserInfoPage /> */}
-      <div className='w-full flex mt-4'>
-        <div>
-          <Image
-            src="/QQ.png"
-            alt="chenmuyu"
-            priority
-            width={180}
-            height={180}
-            className="rounded-xl mx-auto mb-6 border-4 shadow-lg"
-          />
-        </div>
-        <div>
-          <h1 className="text-2xl font-bold mb-4 cursor-target w-24">
-            <UserTextClone propsText="网站介绍"></UserTextClone>
-          </h1>
-          <TextType
-            text={["欢迎来到陈慕宇的个人网站！我是一名前端开发工程师。专注于现代前端技术。这个网站会记录本人平时使用 / 学习的技术栈以及一些个人的见解。希望你能喜欢这里的内容！"]}
-            typingSpeed={100}
-            pauseDuration={1500}
-            showCursor={true}
-            cursorCharacter="_"
-          />
-        </div>
-        <div>
-
-        </div>
-      </div>
+      <UserInfoPage />
       <UserTimeline />
       <UserParallax />
     </div>

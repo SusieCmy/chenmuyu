@@ -37,7 +37,7 @@ export default function Blog() {
     <div className="min-h-screen font-[family-name:var(--font-geist-sans)] p-6">
       <main className="mx-auto">
         <div className="mb-8">
-          <h1 className="text-2xl font-bold mb-4">
+          <h1 className="text-2xl font-bold mb-4 cursor-target w-24">
             <UserTextClone propsText="技术博客"></UserTextClone>
           </h1>
         </div>
@@ -65,7 +65,7 @@ export default function Blog() {
                     {post.tags.map((tag) => (
                       <span
                         key={tag}
-                        className={`px-3 py-1 text-xs font-semibold rounded-full transition-transform duration-200 hover:scale-105 ${getTagStyle(tag)}`}
+                        className={`px-3 py-1 text-xs font-semibold rounded-full transition-transform duration-200 hover:scale-105 cursor-target ${getTagStyle(tag)}`}
                       >
                         {tag}
                       </span>
