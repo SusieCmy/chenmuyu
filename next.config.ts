@@ -14,6 +14,9 @@ const nextConfig: NextConfig = {
   // distDir: 'dist',
   output: 'export',
   generateEtags: false,
+  images: {
+    unoptimized: true,
+  },
   experimental: {
     serverComponentsHmrCache: false, // defaults to true
     staticGenerationRetryCount: 1,
