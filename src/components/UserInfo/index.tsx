@@ -11,8 +11,8 @@ import UserTextClone from '@/components/Animation/web/UserTextClone';
 import { getTagStyle } from '@/lib/tagStyles'
 const UserInfoPage = () => {
   return (
-    <div className='w-full flex mt-4'>
-      <div className='w-1/5'>
+    <div className='grid grid-flow-col grid-rows-2 gap-3 mt-4'>
+      <div className='row-span-2'>
         <Image
           src="/QQ.png"
           alt="chenmuyu"
@@ -22,7 +22,7 @@ const UserInfoPage = () => {
           className="rounded-xl mx-auto mb-6 border-4 shadow-lg"
         />
       </div>
-      <div className='w-2/5'>
+      <div className='row-span-2'>
         <h1 className="text-2xl font-bold mb-4 cursor-target w-24">
           <UserTextClone propsText="网站介绍"></UserTextClone>
         </h1>
@@ -34,7 +34,7 @@ const UserInfoPage = () => {
           cursorCharacter="_"
         />
       </div>
-      <div className='w-2/5'>
+      <div className='row-span-2'>
         <h1 className="text-2xl font-bold mb-4 cursor-target w-30">
           <UserTextClone propsText="个人技术栈"></UserTextClone>
         </h1>
