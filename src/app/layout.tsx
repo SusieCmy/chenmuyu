@@ -8,6 +8,7 @@
 
 import type { Metadata } from "next";
 import Link from "next/link"
+import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import ThemeProvider from "@/components/ThemeProvider";
@@ -72,9 +73,23 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const getBdAnalyticsTag = () => {
+    return {
+      __html: `
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?15d5875aa593fdd5d415894863dd9767";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+      `,
+    };
+  };
   return (
     <html lang="en">
       <GoogleTagManager gtmId="GTM-5GZ87BM2" />
+      <Script dangerouslySetInnerHTML={getBdAnalyticsTag()} />
       <body
         className={`font-sans antialiased`}
       >
