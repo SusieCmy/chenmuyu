@@ -13,7 +13,7 @@ import Header from "@/components/Header";
 import ThemeProvider from "@/components/ThemeProvider";
 import StructuredData from '@/components/StructuredData';
 import TargetCursor from "@/components/TargetCursor";
-import { GoogleAnalytics } from '@next/third-parties/google'
+import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
 
 export const metadata: Metadata = {
   title: {
@@ -74,6 +74,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <GoogleTagManager gtmId="GTM-5GZ87BM2" />
       <body
         className={`font-sans antialiased`}
       >

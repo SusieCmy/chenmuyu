@@ -10,7 +10,7 @@ import Image from 'next/image'
 import TextType from '@/components/TextType'
 import UserTextClone from '@/components/Animation/web/UserTextClone';
 import { getTagStyle } from '@/lib/tagStyles'
-import { sendGAEvent } from '@next/third-parties/google'
+import { sendGAEvent, sendGTMEvent } from '@next/third-parties/google'
 
 const UserInfoPage = () => {
   return (
@@ -38,7 +38,7 @@ const UserInfoPage = () => {
         />
       </div>
       <div className='w-64'>
-        <h1 className="text-2xl font-bold mb-4 cursor-target w-32">
+        <h1 className="text-2xl font-bold mb-4 cursor-target w-32" onClick={() => sendGTMEvent({ event: 'cmyClicked', value: 'xyz' })}>
           <UserTextClone propsText="个人技术栈"></UserTextClone>
         </h1>
         <div>
