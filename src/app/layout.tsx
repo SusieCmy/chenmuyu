@@ -89,7 +89,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <GoogleTagManager gtmId="GTM-5GZ87BM2" />
-      <Script dangerouslySetInnerHTML={getBdAnalyticsTag()} />
+      <Script id="baidu-analytics" dangerouslySetInnerHTML={getBdAnalyticsTag()} />
       <body
         className={`font-sans antialiased`}
       >
