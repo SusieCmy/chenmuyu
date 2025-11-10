@@ -15,7 +15,12 @@ export default function MobileTOC() {
   const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
+    // 确保在客户端运行
+    if (typeof window === 'undefined') return;
+    
     const headings = document.querySelectorAll('article h1, article h2, article h3')
+    if (headings.length === 0) return;
+    
     const tocItems: TocItem[] = []
 
     headings.forEach((heading, index) => {
@@ -31,7 +36,10 @@ export default function MobileTOC() {
       })
     })
 
-    setToc(tocItems)
+    // 使用 requestAnimationFrame 延迟状态更新，避免在 effect 中同步设置状态
+    requestAnimationFrame(() => {
+      setToc(tocItems)
+    })
 
     // 监听滚动以高亮当前标题
     const observer = new IntersectionObserver(

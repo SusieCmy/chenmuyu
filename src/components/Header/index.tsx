@@ -16,53 +16,67 @@ import useThemeStore from "@/store/useThemeStore"
 export default function Header() {
   const { setThemeType, themeType } = useThemeStore()
   useEffect(() => {
+    // 确保在客户端运行
+    if (typeof window === 'undefined') return;
+
     setTimeout(() => {
-      animate(svg.createDrawable('.line'), {
-        draw: ['0 0', '0 1', '1 1'],
-        ease: 'inOutQuad',
-        duration: 2000,
-        delay: stagger(100),
-        loop: true
-      });
+      const lineElements = svg.createDrawable('.line');
+      if (lineElements && lineElements.length > 0) {
+        animate(lineElements, {
+          draw: ['0 0', '0 1', '1 1'],
+          ease: 'inOutQuad',
+          duration: 2000,
+          delay: stagger(100),
+          loop: true
+        });
+      }
     }, 1000);
-    const scope = utils.$('.headerNameRef')
-    animate(scope, {
-      y: [
-        { to: '-2.75rem', ease: 'outExpo', duration: 600 },
-        { to: 0, ease: 'outBounce', duration: 800, delay: 100 }
-      ],
-      rotate: {
-        from: '-1turn',
-        delay: 0
-      },
-      delay: (_, i) => i * 50,
-      ease: 'inOutCirc',
-      loopDelay: 1000,
-      loop: false
-    });
+    
+    const scope = utils.$('.headerNameRef');
+    if (scope && scope.length > 0) {
+      animate(scope, {
+        y: [
+          { to: '-2.75rem', ease: 'outExpo', duration: 600 },
+          { to: 0, ease: 'outBounce', duration: 800, delay: 100 }
+        ],
+        rotate: {
+          from: '-1turn',
+          delay: 0
+        },
+        delay: (_, i) => i * 50,
+        ease: 'inOutCirc',
+        loopDelay: 1000,
+        loop: false
+      });
+    }
   }, []);
   useEffect(() => {
-    const scopeTextRef = utils.$('.menuTextRef')
-    animate(scopeTextRef, {
-      x: [
-        { to: '10rem', duration: 0 },
-        { to: 0, easing: 'easeOutBounce', duration: 1000 }
-      ],
-      rotate: [
-        { to: '180deg', duration: 0 },
-        { to: '0deg', easing: 'easeOutBack', duration: 800, delay: 100 }
-      ],
-      opacity: [
-        { to: 0, duration: 0 },
-        { to: 1, easing: 'easeOutQuad', duration: 500, delay: 150 }
-      ],
-      scale: [
-        { to: 0.3, duration: 0 },
-        { to: 1, easing: 'easeOutElastic', duration: 1200, delay: 50 }
-      ],
-      delay: (_, i) => i * 80,
-      easing: 'easeInOutCirc'
-    });
+    // 确保在客户端运行
+    if (typeof window === 'undefined') return;
+
+    const scopeTextRef = utils.$('.menuTextRef');
+    if (scopeTextRef && scopeTextRef.length > 0) {
+      animate(scopeTextRef, {
+        x: [
+          { to: '10rem', duration: 0 },
+          { to: 0, easing: 'easeOutBounce', duration: 1000 }
+        ],
+        rotate: [
+          { to: '180deg', duration: 0 },
+          { to: '0deg', easing: 'easeOutBack', duration: 800, delay: 100 }
+        ],
+        opacity: [
+          { to: 0, duration: 0 },
+          { to: 1, easing: 'easeOutQuad', duration: 500, delay: 150 }
+        ],
+        scale: [
+          { to: 0.3, duration: 0 },
+          { to: 1, easing: 'easeOutElastic', duration: 1200, delay: 50 }
+        ],
+        delay: (_, i) => i * 80,
+        easing: 'easeInOutCirc'
+      });
+    }
   }, []);
 
   const handleTheme = () => {

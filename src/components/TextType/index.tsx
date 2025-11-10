@@ -61,10 +61,10 @@ const TextType = ({
     return Math.random() * (max - min) + min;
   }, [variableSpeed, typingSpeed]);
 
-  const getCurrentTextColor = () => {
+  const getCurrentTextColor = useCallback(() => {
     if (textColors.length === 0) return;
     return textColors[currentTextIndex % textColors.length];
-  };
+  }, [textColors, currentTextIndex]);
 
   useEffect(() => {
     if (!startOnVisible || !containerRef.current) return;
@@ -170,25 +170,32 @@ const TextType = ({
   const shouldHideCursor =
     hideCursorWhileTyping && (currentCharIndex < textArray[currentTextIndex].length || isDeleting);
 
-  return createElement(
-    Component,
-    {
-      ref: containerRef,
-      className: `inline-block whitespace-pre-wrap tracking-tight ${className}`,
-      ...props
-    },
-    <span className="inline" style={{ color: getCurrentTextColor() || 'inherit' }}>
-      {displayedText}
-    </span>,
-    showCursor && (
-      <span
-        ref={cursorRef}
-        className={`ml-1 inline-block opacity-100 ${shouldHideCursor ? 'hidden' : ''} ${cursorClassName}`}
-      >
-        {cursorCharacter}
-      </span>
-    )
-  );
+  // 使用 useMemo 缓存组件，避免在 render 中创建新组件
+  const memoizedElement = useMemo(() => {
+    const textColor = getCurrentTextColor();
+    return createElement(
+      Component,
+      {
+        ref: containerRef,
+        className: `inline-block whitespace-pre-wrap tracking-tight ${className}`,
+        ...props
+      },
+      <span className="inline" style={{ color: textColor || 'inherit' }}>
+        {displayedText}
+      </span>,
+      showCursor && (
+        <span
+          ref={cursorRef}
+          className={`ml-1 inline-block opacity-100 ${shouldHideCursor ? 'hidden' : ''} ${cursorClassName}`}
+        >
+          {cursorCharacter}
+        </span>
+      )
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [Component, className, displayedText, showCursor, shouldHideCursor, cursorClassName, cursorCharacter, textColors, currentTextIndex]);
+
+  return memoizedElement;
 };
 
 export default TextType;

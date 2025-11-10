@@ -11,11 +11,20 @@ import { useEffect, useState } from "react";
 export default function UserTimeline() {
   const [prevProgress, setPrevProgress] = useState<number>(0)
   useEffect(() => {
+    // 确保在客户端运行
+    if (typeof window === 'undefined') return;
+
     const containers = utils.$(".cmy-scroll-container1");
     const timelines = utils.$('.cmy-timeline');
+    
+    // 检查元素是否存在
+    if (!containers || containers.length === 0) return;
+    if (!timelines || timelines.length === 0) return;
+
     const cardsAnimation = animate(timelines, {
       scale: [1, .5, 1]
     });
+    
     onScroll({
       target: containers,
       enter: 'top',

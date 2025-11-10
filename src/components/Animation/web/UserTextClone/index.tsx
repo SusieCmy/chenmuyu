@@ -9,7 +9,7 @@
  * Copyright (c) 2025 by 1732728869@qq.com, All Rights Reserved. 
  */
 "use client";
-import { createTimeline, stagger, text } from 'animejs';
+import { createTimeline, stagger, splitText } from 'animejs';
 import { useEffect, useRef, useId } from "react";
 
 export default function UserTextClone({ propsText }: { propsText: string }) {
@@ -17,10 +17,16 @@ export default function UserTextClone({ propsText }: { propsText: string }) {
   const uniqueId = useId().replace(/:/g, '-');
 
   useEffect(() => {
+    // 确保在客户端运行
+    if (typeof window === 'undefined') return;
     if (!containerRef.current) return;
 
     const selector = `#text-${uniqueId}`;
-    const { chars } = text.split(selector, {
+    const element = document.querySelector(selector);
+    if (!element) return;
+
+    // 使用新的 splitText API 替代废弃的 text.split()
+    const { chars } = splitText(selector, {
       chars: {
         wrap: 'clip',
         clone: 'bottom'
