@@ -1,8 +1,8 @@
 /*
  * @Date: 2025-07-09 11:22:00
  * @LastEditors: cmy && 1732728869@qq.com
- * @LastEditTime: 2025-07-28 16:53:37
- * @FilePath: \susie-cmy\src\components\UserInfo\index.tsx
+ * @LastEditTime: 2025-11-11 10:55:10
+ * @FilePath: \chenmuyu\src\components\UserInfo\index.tsx
  * @Description: 强者都是孤独的
  */
 'use client'
@@ -14,7 +14,7 @@ import { sendGAEvent, sendGTMEvent } from '@next/third-parties/google'
 
 const UserInfoPage = () => {
   return (
-    <div className='grid grid-cols-[auto_1fr_auto] gap-6 mt-4 items-start'>
+    <div className='grid grid-cols-[auto_1fr_auto] gap-6 mt-4 items-start max-md:grid-cols-2'>
       <div>
         <Image
           src="/QQ.png"
@@ -25,7 +25,7 @@ const UserInfoPage = () => {
           className="rounded-xl mb-6 border-4 shadow-lg"
         />
       </div>
-      <div className='min-w-0'>
+      <div className='min-w-0 max-md:hidden'>
         <h1 className="text-2xl font-bold mb-4 cursor-target w-24" onClick={() => sendGAEvent('event', 'add', { value: 'xyz' })}>
           <UserTextClone propsText="网站介绍"></UserTextClone>
         </h1>
