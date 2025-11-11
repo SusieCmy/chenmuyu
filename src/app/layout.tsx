@@ -1,8 +1,8 @@
 /*
  * @Date: 2025-07-07 10:29:58
  * @LastEditors: cmy && 1732728869@qq.com
- * @LastEditTime: 2025-07-28 17:01:33
- * @FilePath: \susie-cmy\src\app\layout.tsx
+ * @LastEditTime: 2025-11-11 11:07:36
+ * @FilePath: \chenmuyu\src\app\layout.tsx
  * @Description: 强者都是孤独的
  */
 
@@ -61,9 +61,9 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'Ee4sy6Z50yHOab3ufIJOv0k64WujWKeRKyT6zBdFHj8',
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
     other: {
-      'baidu-site-verification': 'codeva-LwfF9TmKJY',
+      'baidu-site-verification': process.env.NEXT_PUBLIC_BAIDU_SITE_VERIFICATION || '',
     },
   },
 }
@@ -79,8 +79,8 @@ export default function RootLayout({
         var _hmt = _hmt || [];
         (function() {
             var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?15d5875aa593fdd5d415894863dd9767";
-            var s = document.getElementsByTagName("script")[0]; 
+            hm.src = "https://hm.baidu.com/hm.js?${process.env.NEXT_PUBLIC_BAIDU_ANALYTICS_ID}";
+            var s = document.getElementsByTagName("script")[0];
             s.parentNode.insertBefore(hm, s);
         })();
       `,
@@ -88,7 +88,7 @@ export default function RootLayout({
   };
   return (
     <html lang="en">
-      <GoogleTagManager gtmId="GTM-5GZ87BM2" />
+      <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID || ''} />
       <Script id="baidu-analytics" dangerouslySetInnerHTML={getBdAnalyticsTag()} />
       <body
         className={`font-sans antialiased`}
@@ -156,7 +156,7 @@ export default function RootLayout({
           </footer>
         </ThemeProvider>
       </body>
-      <GoogleAnalytics gaId="G-ZWJQLWCFS1" />
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ''} />
     </html>
   );
 }
