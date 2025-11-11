@@ -8,7 +8,6 @@
 import { Metadata } from 'next'
 import UserInfoPage from "@/components/UserInfo";
 import UserTimeline from "@/components/Animation/web/UserTimeline"
-import UserParallax from "@/components/Animation/web/UserParallax"
 
 export const metadata: Metadata = {
   title: 'chenmuyu - 前端开发工程师 | iaxixi.com',
@@ -51,7 +50,6 @@ export default function Index() {
     <div className="font-[family-name:var(--font-geist-sans)]">
       <UserInfoPage />
       <UserTimeline />
-      <UserParallax />
     </div>
   );
 }

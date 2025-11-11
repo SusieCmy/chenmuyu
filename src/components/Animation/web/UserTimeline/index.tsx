@@ -9,27 +9,19 @@
  * Copyright (c) 2025 by 1732728869@qq.com, All Rights Reserved. 
  */
 
-"use client";
+'use client';
 import { utils, onScroll, animate } from 'animejs';
 import { useEffect, useState } from "react";
 export default function UserTimeline() {
   const [prevProgress, setPrevProgress] = useState<number>(0)
 
   useEffect(() => {
-    // 确保在客户端运行
-    if (typeof window === 'undefined') return;
-
     const containers = utils.$(".cmy-scroll-container");
     const timelines = utils.$('.cmy-timeline');
-    
-    // 检查元素是否存在
-    if (!containers || containers.length === 0) return;
-    if (!timelines || timelines.length === 0) return;
-
     const cardsAnimation = animate(timelines, {
       scale: [1, 0.5, 10]
     });
-    
+
     onScroll({
       target: containers,
       enter: 'top',
@@ -42,28 +34,14 @@ export default function UserTimeline() {
     }).link(cardsAnimation)
 
     return () => {
-      // 清理动画实例，防止内存泄漏
       cardsAnimation?.pause()
     }
   }, []);
   return (
     <div className="">
-      {/* <div className="">
-        <div className="relative">
-          <div className="absolute top-0 left-0 w-full h-1 backdrop-blur-md"></div>
-          <div className="absolute bottom-0 left-0 w-full h-1 backdrop-blur-md"></div>
-          <div className="absolute top-0 left-0 h-full w-1 backdrop-blur-md"></div>
-          <div className="absolute top-0 right-0 h-full w-1 backdrop-blur-md"></div>
-          <div className="p-1">
-            <video ref={homeVideoRef} src={`./${videoSrc}.mp4`} className="w-auto" autoPlay loop muted></video>
-          </div>
-        </div>
-      </div> */}
       <div className="h-[400lvh] relative cmy-scroll-container">
         <div className="sticky left-0 top-1/12 h-[90lvh]">
           <progress className="w-[83lvh] cmy-progress cmy-progress-accent absolute left-0 top-0 transform rotate-90 origin-left" value={prevProgress * 100} max="100"></progress>
-          {/* <div className="cmy-timeline mt-4 w-full h-[50lvh] text-sm bg-gray-600">
-          </div> */}
         </div>
       </div>
     </div>
