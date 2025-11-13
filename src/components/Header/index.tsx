@@ -16,9 +16,6 @@ import { useEffect } from "react";
 export default function Header() {
   // const { setThemeType, themeType } = useThemeStore()
   useEffect(() => {
-    // 确保在客户端运行
-    if (typeof window === 'undefined') return;
-
     setTimeout(() => {
       const lineElements = svg.createDrawable('.line');
       if (lineElements && lineElements.length > 0) {
@@ -31,7 +28,7 @@ export default function Header() {
         });
       }
     }, 1000);
-    
+
     const scope = utils.$('.headerNameRef');
     if (scope && scope.length > 0) {
       animate(scope, {
@@ -51,9 +48,6 @@ export default function Header() {
     }
   }, []);
   useEffect(() => {
-    // 确保在客户端运行
-    if (typeof window === 'undefined') return;
-
     const scopeTextRef = utils.$('.menuTextRef');
     if (scopeTextRef && scopeTextRef.length > 0) {
       animate(scopeTextRef, {
@@ -83,7 +77,7 @@ export default function Header() {
   //   setThemeType(themeType === 'light' ? 'dark' : 'light')
   // }
   return (
-    <div className="border-2 h-16 border-solid cmy-header-border max-w-screen-md rounded-full p-2 mx-auto shadow-sm backdrop-blur-md flex  items-center">
+    <div className="border-2 h-16 relative border-solid cmy-header-border max-w-screen-md rounded-full p-2 mx-auto shadow-sm backdrop-blur-md flex  items-center">
       <div className="flex flex-1 items-center h-full">
         <Link href={'/'} title="chenmuyu">
           <div className='absolute top-3 left-0 w-48'>

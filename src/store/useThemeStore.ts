@@ -17,7 +17,8 @@ type ThemeStore = {
 const useThemeStore = create<ThemeStore>()(
   persist(
     (set) => ({
-      themeType: 'light',
+      // themeType: 'light',
+      themeType: 'dark',
       setThemeType: (themeType) => set({ themeType }),
     }),
     { name: 'themeType-storage' }
