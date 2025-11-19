@@ -2,7 +2,7 @@
  * @Author: Susie 1732728869@qq.com
  * @Date: 2025-08-18 20:46:03
  * @LastEditors: Susie 1732728869@qq.com
- * @LastEditTime: 2025-08-20 21:03:56
+ * @LastEditTime: 2025-11-19 21:42:32
  * @FilePath: \susie-cmy\src\app\blog\[slug]\page.tsx
  * @Description: 强者都是孤独的
  * 
@@ -111,7 +111,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-base-100">
+    <div className="min-h-screen max-w-screen-xl mx-auto bg-base-100">
       <ReadingProgress />
       <MobileTOC />
       <ScrollToTop />

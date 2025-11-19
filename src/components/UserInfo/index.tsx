@@ -1,8 +1,8 @@
 /*
  * @Date: 2025-07-09 11:22:00
- * @LastEditors: cmy && 1732728869@qq.com
- * @LastEditTime: 2025-11-11 10:55:10
- * @FilePath: \chenmuyu\src\components\UserInfo\index.tsx
+ * @LastEditors: Susie 1732728869@qq.com
+ * @LastEditTime: 2025-11-19 21:43:09
+ * @FilePath: \susie-cmy\src\components\UserInfo\index.tsx
  * @Description: 强者都是孤独的
  */
 'use client'
@@ -11,10 +11,15 @@ import TextType from '@/components/TextType'
 import UserTextClone from '@/components/Animation/web/UserTextClone';
 import { getTagStyle } from '@/lib/tagStyles'
 import { sendGAEvent, sendGTMEvent } from '@next/third-parties/google'
+import TargetCursor from "@/components/TargetCursor";
 
 const UserInfoPage = () => {
   return (
-    <div className='grid grid-cols-[auto_1fr_auto] gap-6 mt-4 items-start max-md:grid-cols-2'>
+    <div className='max-w-screen-xl mx-auto grid grid-cols-[auto_1fr_auto] gap-6 mt-4 items-start max-md:grid-cols-2'>
+      <TargetCursor
+        spinDuration={2}
+        hideDefaultCursor={true}
+      />
       <div>
         <Image
           src="/QQ.png"

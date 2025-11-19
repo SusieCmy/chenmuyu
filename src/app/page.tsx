@@ -1,7 +1,7 @@
 /*
  * @Date: 2025-07-07 10:29:58
- * @LastEditors: cmy && 1732728869@qq.com
- * @LastEditTime: 2025-07-24 09:52:50
+ * @LastEditors: Susie 1732728869@qq.com
+ * @LastEditTime: 2025-11-19 21:42:49
  * @FilePath: \susie-cmy\src\app\page.tsx
  * @Description: 强者都是孤独的
  */
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
 
 export default function Index() {
   return (
-    <div className="font-[family-name:var(--font-geist-sans)]">
+    <div className="font-[family-name:var(--font-geist-sans)] max-w-screen-xl mx-auto">
       <UserInfoPage />
       <UserTimeline />
     </div>

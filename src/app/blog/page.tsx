@@ -34,7 +34,7 @@ export default function Blog() {
   const posts = getAllPosts()
 
   return (
-    <div className="min-h-screen font-[family-name:var(--font-geist-sans)] p-6">
+    <div className="min-h-screen max-w-screen-xl mx-auto font-[family-name:var(--font-geist-sans)] p-6">
       <main className="mx-auto">
         <div className="mb-8">
           <h1 className="text-2xl font-bold mb-4 cursor-target w-24">
