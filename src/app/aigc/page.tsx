@@ -1,10 +1,14 @@
 'use client'
 import { useState, useCallback } from 'react';
+import { House } from "lucide-react";
 import {
     ReactFlow,
     applyNodeChanges,
     applyEdgeChanges,
     addEdge,
+    Background,
+    Panel,
+    BackgroundVariant
 } from '@xyflow/react';
 import type {
     Node,
@@ -39,18 +43,27 @@ export default function App() {
             setEdges((edgesSnapshot) => addEdge(params, edgesSnapshot)),
         [],
     );
-
     return (
         <div style={{ width: '100vw', height: '100vh' }}>
-            <ReactFlow
-                colorMode="light"
-                nodes={nodes}
-                edges={edges}
-                onNodesChange={onNodesChange}
-                onEdgesChange={onEdgesChange}
-                onConnect={onConnect}
-                fitView
-            />
+            <>
+                <ReactFlow
+                    colorMode="light"
+                    nodes={nodes}
+                    edges={edges}
+                    onNodesChange={onNodesChange}
+                    onEdgesChange={onEdgesChange}
+                    onConnect={onConnect}
+                    fitView
+                >
+                    <Background variant={BackgroundVariant.Cross} />
+                    <Panel position="top-left">
+                        <button className="fixed top-4 left-4 cmy-btn cmy-btn-primary">
+                            <House />
+                        </button>
+                    </Panel>
+                </ReactFlow>
+                
+            </>
         </div>
     );
 }
