@@ -21,5 +21,6 @@ export default function HideInAigc({ children }: { children: React.ReactNode }) 
   const pathname = usePathname();
   if (pathname?.startsWith("/aigc")) return null;
   if (pathname?.startsWith("/dashboard")) return null;
+  if (pathname?.startsWith("/dialogue")) return null;
   return children;
 }
