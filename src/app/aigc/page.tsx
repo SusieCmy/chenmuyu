@@ -1,6 +1,7 @@
 'use client'
 import { useState, useCallback } from 'react';
 import { House } from "lucide-react";
+import Link from 'next/link'
 import {
     ReactFlow,
     applyNodeChanges,
@@ -43,6 +44,9 @@ export default function App() {
             setEdges((edgesSnapshot) => addEdge(params, edgesSnapshot)),
         [],
     );
+    const linkHome = () => {
+        window.location.href = '/';
+    }
     return (
         <div style={{ width: '100vw', height: '100vh' }}>
             <>
@@ -57,12 +61,14 @@ export default function App() {
                 >
                     <Background variant={BackgroundVariant.Cross} />
                     <Panel position="top-left">
-                        <button className="fixed top-4 left-4 cmy-btn cmy-btn-primary">
-                            <House />
-                        </button>
+                        <Link href="/">
+                            <button className="fixed top-4 left-4 cmy-btn cmy-btn-primary" onClick={linkHome}>
+                                <House />
+                            </button>
+                        </Link>
                     </Panel>
                 </ReactFlow>
-                
+
             </>
         </div>
     );

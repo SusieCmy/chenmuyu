@@ -20,5 +20,6 @@ import { usePathname } from "next/navigation";
 export default function HideInAigc({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   if (pathname?.startsWith("/aigc")) return null;
+  if (pathname?.startsWith("/dashboard")) return null;
   return children;
 }
