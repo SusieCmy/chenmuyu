@@ -2,7 +2,7 @@
  * @Author: Susie 1732728869@qq.com
  * @Date: 2025-07-19 19:16:04
  * @LastEditors: Susie 1732728869@qq.com
- * @LastEditTime: 2025-11-19 21:00:23
+ * @LastEditTime: 2025-11-20 22:16:23
  * @FilePath: \susie-cmy\next.config.ts
  * @Description: 强者都是孤独的
  *
@@ -11,13 +11,13 @@
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  // 静态导出配置
-  output: 'export',
+  // // 静态导出配置
+  // output: 'export',
 
-  // 图片优化配置（静态导出必需）
-  images: {
-    unoptimized: true,
-  },
+  // // 图片优化配置（静态导出必需）
+  // images: {
+  //   unoptimized: true,
+  // },
 
   // 实验性配置
   experimental: {
