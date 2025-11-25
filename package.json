@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "rimraf out && next build",
+    "build": "rimraf .next && next build",
     "start": "next start",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --max-warnings 0",
-    "clean": "rimraf .next out node_modules/.cache"
+    "clean": "rimraf .next node_modules/.cache"
   },
   "dependencies": {
     "@next/third-parties": "^16.0.1",
