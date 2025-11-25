@@ -53,22 +53,22 @@ export default function Header() {
       animate(scopeTextRef, {
         x: [
           { to: '10rem', duration: 0 },
-          { to: 0, easing: 'easeOutBounce', duration: 1000 }
+          { to: 0, ease: 'easeOutBounce', duration: 1000 }
         ],
         rotate: [
           { to: '180deg', duration: 0 },
-          { to: '0deg', easing: 'easeOutBack', duration: 800, delay: 100 }
+          { to: '0deg', ease: 'easeOutBack', duration: 800, delay: 100 }
         ],
         opacity: [
           { to: 0, duration: 0 },
-          { to: 1, easing: 'easeOutQuad', duration: 500, delay: 150 }
+          { to: 1, ease: 'easeOutQuad', duration: 500, delay: 150 }
         ],
         scale: [
           { to: 0.3, duration: 0 },
-          { to: 1, easing: 'easeOutElastic', duration: 1200, delay: 50 }
+          { to: 1, ease: 'easeOutElastic', duration: 1200, delay: 50 }
         ],
         delay: (_, i) => i * 80,
-        easing: 'easeInOutCirc'
+        ease: 'easeInOutCirc'
       });
     }
   }, []);
