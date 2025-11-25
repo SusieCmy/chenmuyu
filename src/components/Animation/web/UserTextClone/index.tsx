@@ -9,7 +9,7 @@
  * Copyright (c) 2025 by 1732728869@qq.com, All Rights Reserved. 
  */
 "use client";
-import { createTimeline, stagger, text } from 'animejs';
+import { createTimeline, stagger, splitText } from 'animejs';
 import { useEffect, useRef, useId } from "react";
 
 export default function UserTextClone({ propsText }: { propsText: string }) {
@@ -18,7 +18,7 @@ export default function UserTextClone({ propsText }: { propsText: string }) {
 
   useEffect(() => {
     const selector = `#text-${uniqueId}`;
-    const { chars } = text.split(selector, {
+    const { chars } = splitText(selector, {
       chars: {
         wrap: 'clip',
         clone: 'bottom'
