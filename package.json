@@ -12,7 +12,7 @@
   "dependencies": {
     "@next/third-parties": "^16.0.1",
     "@xyflow/react": "^12.9.3",
-    "animejs": "^4.0.2",
+    "animejs": "^4.2.2",
     "gray-matter": "^4.0.3",
     "gsap": "^3.13.0",
     "lucide-react": "^0.554.0",
