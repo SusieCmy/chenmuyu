@@ -6,7 +6,7 @@
 
 import React from "react";
 import { Sparkles } from "lucide-react";
-import { QUICK_PROMPTS } from "../constants";
+import { QUICK_PROMPTS } from "@/components/Chat/constants";
 
 interface EmptyStateProps {
     onSelectPrompt: (text: string) => void;

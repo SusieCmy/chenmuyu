@@ -6,7 +6,7 @@
  * @Description: 强者都是孤独的
  */
 import { Metadata } from 'next'
-import UserInfoPage from "@/components/UserInfo";
+import UserInfoPage from "@/components/User/UserInfo";
 import UserTimeline from "@/components/Animation/web/UserTimeline"
 
 export const metadata: Metadata = {

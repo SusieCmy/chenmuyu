@@ -7,11 +7,11 @@
  */
 'use client'
 import Image from 'next/image'
-import TextType from '@/components/TextType'
+import TextType from '@/components/UI/TextType'
 import UserTextClone from '@/components/Animation/web/UserTextClone';
 import { getTagStyle } from '@/lib/tagStyles'
 import { sendGAEvent, sendGTMEvent } from '@next/third-parties/google'
-import TargetCursor from "@/components/TargetCursor";
+import TargetCursor from "@/components/UI/TargetCursor";
 
 const UserInfoPage = () => {
   return (

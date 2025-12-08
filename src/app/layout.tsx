@@ -10,11 +10,11 @@ import type { Metadata } from "next";
 import Link from "next/link"
 import Script from "next/script";
 import "./globals.css";
-import Header from "@/components/Header";
-import HideInAigc from "@/components/HideInAigc";
-import ThemeProvider from "@/components/ThemeProvider";
+import Header from "@/components/Layout/Header";
+import HideInAigc from "@/components/Layout/HideInAigc";
+import ThemeProvider from "@/components/Theme/ThemeProvider";
 import QueryProvider from "@/providers/query-provider";
-import StructuredData from '@/components/StructuredData';
+import StructuredData from '@/components/SEO/StructuredData';
 import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
 
 export const metadata: Metadata = {

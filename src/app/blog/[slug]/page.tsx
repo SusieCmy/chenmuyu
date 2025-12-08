@@ -16,9 +16,9 @@ import { getTagStyle } from '@/lib/tagStyles'
 import ReactMarkdown from 'react-markdown'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
-import ReadingProgress from '@/components/ReadingProgress'
-import MobileTOC from '@/components/MobileTOC'
-import ScrollToTop from '@/components/ScrollToTop'
+import ReadingProgress from '@/components/Blog/ReadingProgress'
+import MobileTOC from '@/components/Blog/MobileTOC'
+import ScrollToTop from '@/components/UI/ScrollToTop'
 import type { Components } from 'react-markdown'
 
 interface BlogPostPageProps {

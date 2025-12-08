@@ -8,10 +8,10 @@ import React, { useRef, useEffect, useState, useCallback } from "react";
 import type { Message } from "@/types/chat";
 import { useChatStore } from "@/store/chat-store";
 import { useSendMessage } from "@/hooks/use-chat";
-import { ChatHeader } from "./components/ChatHeader";
-import { EmptyState } from "./components/EmptyState";
-import { MessageItem } from "./components/MessageItem";
-import { MessageInput } from "./components/MessageInput";
+import { ChatHeader } from "@/components/Chat/ChatHeader";
+import { EmptyState } from "@/components/Chat/EmptyState";
+import { MessageItem } from "@/components/Chat/MessageItem";
+import { MessageInput } from "@/components/Chat/MessageInput";
 
 export default function DialoguePage() {
   const { messages, addMessage, updateMessage, clearMessages } = useChatStore();
