@@ -11,7 +11,7 @@ import UserTimeline from "@/components/Animation/web/UserTimeline"
 
 export const metadata: Metadata = {
   title: 'chenmuyu - 前端开发工程师 | iaxixi.com',
-  description: 'chenmuyu，Web前端开发工程师，专注于现代前端技术开发，提供专业的前端解决方案',
+  description: 'chenmuyu，Web前端开发工程师，专注于现代前端技术开发，持续学习新前端技术，分享前端开发经验',
   keywords: [
     'chenmuyu', '前端开发', 'iaxixi', '开发工程师', '博客', '项目经历', '联系我', '关于我'
   ],

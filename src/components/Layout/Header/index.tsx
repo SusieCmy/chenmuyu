@@ -11,6 +11,7 @@
 import Link from "next/link"
 import { animate, utils, svg, stagger } from "animejs";
 import { useEffect } from "react";
+import Navigation from "@/components/Layout/Navigation"
 // import useThemeStore from "@/store/useThemeStore"
 
 export default function Header() {
@@ -77,8 +78,8 @@ export default function Header() {
   //   setThemeType(themeType === 'light' ? 'dark' : 'light')
   // }
   return (
-    <div className="border-2 h-16 relative border-solid cmy-header-border max-w-screen-md rounded-full p-2 mx-auto shadow-sm backdrop-blur-md flex  items-center">
-      <div className="flex flex-1 items-center h-full">
+    <div className="border-2 min-h-16 relative border-solid cmy-header-border max-w-screen-2xl rounded-full p-2 px-4 mx-auto shadow-sm backdrop-blur-md flex items-center justify-between gap-4">
+      <div className="flex items-center h-full shrink-0">
         <Link href={'/'} title="chenmuyu">
           <div className='absolute top-3 left-0 w-48'>
             <svg viewBox="0 0 500 100">
@@ -157,6 +158,9 @@ export default function Header() {
         <div className="ml-10">
         </div>
       </div>
+
+      {/* 导航菜单 */}
+      <Navigation />
     </div>
   )
 } 
