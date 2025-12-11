@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 export default function Contact() {
   
   return (
-    <div className="min-h-screen font-[family-name:var(--font-geist-sans)]">
+    <div className="min-h-screen max-w-screen-2xl mx-auto font-[family-name:var(--font-geist-sans)]">
       <main className="">
       </main>
     </div>

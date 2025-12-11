@@ -118,7 +118,7 @@ export default function DialoguePage() {
 
       {/* 聊天区域 */}
       <div className="flex-1 overflow-y-auto scrollbar-thin">
-        <div className="max-w-4xl mx-auto px-3 sm:px-4 md:px-6 py-4 sm:py-6">
+        <div className="max-w-screen-2xl mx-auto px-3 sm:px-4 md:px-6 py-4 sm:py-6">
           {messages.length === 0 ? (
             <EmptyState onSelectPrompt={setInput} />
           ) : (

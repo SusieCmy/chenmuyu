@@ -9,7 +9,7 @@
 export default function Home() {
   
   return (
-    <div className="min-h-screen font-[family-name:var(--font-geist-sans)]">
+    <div className="min-h-screen max-w-screen-2xl mx-auto font-[family-name:var(--font-geist-sans)]">
       <main className="">
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">

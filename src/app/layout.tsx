@@ -15,6 +15,7 @@ import HideInAigc from "@/components/Layout/HideInAigc";
 import ThemeProvider from "@/components/Theme/ThemeProvider";
 import QueryProvider from "@/providers/query-provider";
 import StructuredData from '@/components/SEO/StructuredData';
+import ScrollToTopOnRouteChange from '@/components/UI/ScrollToTopOnRouteChange';
 import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
 
 export const metadata: Metadata = {
@@ -96,6 +97,7 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <QueryProvider>
+            <ScrollToTopOnRouteChange />
             <header className="sticky top-2 z-50">
               <StructuredData />
               <HideInAigc>

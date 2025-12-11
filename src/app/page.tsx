@@ -47,7 +47,7 @@ export const metadata: Metadata = {
 
 export default function Index() {
   return (
-    <div className="font-[family-name:var(--font-geist-sans)] max-w-screen-xl mx-auto">
+    <div className="font-[family-name:var(--font-geist-sans)] max-w-screen-2xl mx-auto">
       <UserInfoPage />
       <UserTimeline />
     </div>

@@ -111,7 +111,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   return (
-    <div className="min-h-screen max-w-screen-xl mx-auto bg-base-100">
+    <div className="min-h-screen max-w-screen-2xl mx-auto bg-base-100">
       <ReadingProgress />
       <MobileTOC />
       <ScrollToTop />
