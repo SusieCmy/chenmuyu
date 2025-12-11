@@ -26,7 +26,7 @@ import UserInfoPage from '@/components/User/UserInfo'
 export default function About() {
   return (
     <div className="min-h-screen font-[family-name:var(--font-geist-sans)]">
-      <main className="pt-24 pb-16">
+      <main className="pb-16">
         <UserInfoPage />
       </main>
     </div>

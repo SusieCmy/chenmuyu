@@ -39,7 +39,7 @@ const techStack = {
 
 // 统计数据
 const stats = [
-  { icon: Code2, label: '项目经验', value: '3+年', iconColor: 'text-blue-500' },
+  { icon: Code2, label: '项目经验', value: '5+年', iconColor: 'text-blue-500' },
   { icon: BookOpen, label: '技术文章', value: '50+篇', iconColor: 'text-green-500' },
   { icon: Award, label: '开源贡献', value: '20+次', iconColor: 'text-purple-500' },
   { icon: Coffee, label: '代码行数', value: '100k+', iconColor: 'text-orange-500' },
