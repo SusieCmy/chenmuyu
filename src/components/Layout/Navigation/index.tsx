@@ -41,6 +41,24 @@ const menuItems: MenuItem[] = [
     description: "技术文章"
   },
   {
+    path: "/aigc",
+    label: "AIGC",
+    icon: Sparkles,
+    description: "AI 内容"
+  },
+  {
+    path: "/dialogue",
+    label: "AI对话",
+    icon: MessageCircle,
+    description: "AI 对话"
+  },
+  {
+    path: "/dashboard",
+    label: "数据大屏",
+    icon: BarChart3,
+    description: "数据看板"
+  },
+  {
     path: "/projects",
     label: "项目",
     icon: Briefcase,
@@ -57,25 +75,7 @@ const menuItems: MenuItem[] = [
     label: "联系",
     icon: Mail,
     description: "联系方式"
-  },
-  {
-    path: "/aigc",
-    label: "AIGC",
-    icon: Sparkles,
-    description: "AI 内容"
-  },
-  {
-    path: "/dialogue",
-    label: "对话",
-    icon: MessageCircle,
-    description: "AI 对话"
-  },
-  {
-    path: "/dashboard",
-    label: "数据",
-    icon: BarChart3,
-    description: "数据看板"
-  },
+  }
 ]
 
 export default function Navigation() {

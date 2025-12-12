@@ -167,9 +167,9 @@ const UserInfoPage = () => {
 
               {/* 个人信息 */}
               <div className="flex-1 text-center md:text-left">
-                <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-base-content cursor-target hover:text-primary transition-colors"
+                <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-base-content hover:text-primary transition-colors"
                     onClick={() => sendGAEvent('event', 'add', { value: 'xyz' })}>
-                  陈慕宇
+                      <p className='cursor-target'>陈慕宇</p>
                 </h1>
                 <p className="text-base sm:text-lg text-base-content/70 font-medium mb-4">
                   前端开发工程师

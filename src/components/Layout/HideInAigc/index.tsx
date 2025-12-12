@@ -19,7 +19,8 @@ import { usePathname } from "next/navigation";
  */
 export default function HideInAigc({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  // if (pathname?.startsWith("/aigc")) return null;
+  // 只隐藏 /aigc 的子路由（如 /aigc/new 和 /aigc/{id}），但不隐藏 /aigc 主页
+  if (pathname?.startsWith("/aigc/")) return null;
   if (pathname?.startsWith("/dashboard")) return null;
   if (pathname?.startsWith("/dialogue")) return null;
   return children;
