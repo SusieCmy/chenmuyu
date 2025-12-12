@@ -62,77 +62,74 @@ const socialLinks = [
 const UserInfoPage = () => {
   const containerRef = useRef<HTMLDivElement>(null)
 
+  // 通用动画函数
+  const animateElements = (selector: string, config: {
+    opacity?: [number, number]
+    translateY?: [number, number]
+    scale?: [number, number]
+    delay?: number | ((target: any, index: number) => number)
+    duration?: number
+    ease?: string
+  }) => {
+    const elements = utils.$(selector)
+    if (elements && elements.length > 0) {
+      animate(elements, {
+        opacity: [0, 1],
+        ...config
+      } as any)
+    }
+  }
+
   // 入场动画
   useEffect(() => {
-    const cards = utils.$('.info-card')
-    if (cards && cards.length > 0) {
-      animate(cards, {
-        opacity: [0, 1],
-        translateY: [40, 0],
-        delay: (_, i) => i * 100,
-        duration: 800,
-        ease: 'outExpo'
-      })
-    }
+    // 信息卡片
+    animateElements('.info-card', {
+      translateY: [40, 0],
+      delay: (_, i) => i * 100,
+      duration: 800,
+      ease: 'outExpo'
+    })
 
-    const statItems = utils.$('.stat-item')
-    if (statItems && statItems.length > 0) {
-      animate(statItems, {
-        scale: [0.8, 1],
-        opacity: [0, 1],
-        delay: (_, i) => 400 + i * 80,
-        duration: 600,
-        ease: 'outBack'
-      })
-    }
+    // 统计项
+    animateElements('.stat-item', {
+      scale: [0.8, 1],
+      delay: (_, i) => 400 + i * 80,
+      duration: 600,
+      ease: 'outBack'
+    })
 
-    // 技术栈分类卡片动画
-    const techCategories = utils.$('.tech-category')
-    if (techCategories && techCategories.length > 0) {
-      animate(techCategories, {
-        opacity: [0, 1],
-        translateY: [30, 0],
-        scale: [0.95, 1],
-        delay: (_, i) => 600 + i * 80,
-        duration: 600,
-        ease: 'outExpo'
-      })
-    }
+    // 技术栈分类卡片
+    animateElements('.tech-category', {
+      translateY: [30, 0],
+      scale: [0.95, 1],
+      delay: (_, i) => 600 + i * 80,
+      duration: 600,
+      ease: 'outExpo'
+    })
 
-    // 技术标签动画
-    const techTags = utils.$('.tech-tag')
-    if (techTags && techTags.length > 0) {
-      animate(techTags, {
-        opacity: [0, 1],
-        scale: [0.8, 1],
-        delay: (_, i) => 800 + i * 20,
-        duration: 400,
-        ease: 'outBack'
-      })
-    }
+    // 技术标签
+    animateElements('.tech-tag', {
+      scale: [0.8, 1],
+      delay: (_, i) => 800 + i * 20,
+      duration: 400,
+      ease: 'outBack'
+    })
 
-    // 学习中的技术动画
-    const learningSection = utils.$('.learning-section')
-    if (learningSection && learningSection.length > 0) {
-      animate(learningSection, {
-        opacity: [0, 1],
-        translateY: [20, 0],
-        delay: 1000,
-        duration: 600,
-        ease: 'outExpo'
-      })
-    }
+    // 学习中的技术区域
+    animateElements('.learning-section', {
+      translateY: [20, 0],
+      delay: 1000,
+      duration: 600,
+      ease: 'outExpo'
+    })
 
-    const learningTags = utils.$('.learning-tag')
-    if (learningTags && learningTags.length > 0) {
-      animate(learningTags, {
-        opacity: [0, 1],
-        scale: [0.9, 1],
-        delay: (_, i) => 1200 + i * 100,
-        duration: 500,
-        ease: 'outBack'
-      })
-    }
+    // 学习中的技术标签
+    animateElements('.learning-tag', {
+      scale: [0.9, 1],
+      delay: (_, i) => 1200 + i * 100,
+      duration: 500,
+      ease: 'outBack'
+    })
   }, [])
 
   return (

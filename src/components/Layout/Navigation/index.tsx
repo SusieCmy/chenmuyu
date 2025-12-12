@@ -106,33 +106,45 @@ export default function Navigation() {
     setIsMobileMenuOpen(false)
   }
 
-  // 菜单项入场动画
-  useEffect(() => {
-    const menuItemElements = utils.$('.nav-menu-item')
-    if (menuItemElements && menuItemElements.length > 0) {
-      animate(menuItemElements, {
+  // 通用动画函数
+  const animateElements = (selector: string, config: {
+    opacity?: [number, number]
+    translateY?: [number, number]
+    translateX?: [number, number]
+    scale?: [number, number]
+    rotate?: [number, number]
+    delay?: number | ((target: any, index: number) => number)
+    duration?: number
+    ease?: string
+  }) => {
+    const elements = utils.$(selector)
+    if (elements && elements.length > 0) {
+      animate(elements, {
         opacity: [0, 1],
-        translateY: [-20, 0],
-        delay: (_, i) => i * 50,
-        duration: 600,
-        ease: 'outExpo'
-      })
+        ...config
+      } as any)
     }
+  }
+
+  // 菜单项入场动画 - 弹跳效果
+  useEffect(() => {
+    animateElements('.nav-menu-item', {
+      translateY: [20, 0],
+      delay: (_, i) => i * 60,
+      duration: 700,
+      ease: 'spring(1, 80, 10, 0)'
+    })
   }, [])
 
-  // 移动菜单动画
+  // 移动菜单动画 - 弹跳效果
   useEffect(() => {
     if (isMobileMenuOpen) {
-      const mobileItems = utils.$('.mobile-nav-item')
-      if (mobileItems && mobileItems.length > 0) {
-        animate(mobileItems, {
-          opacity: [0, 1],
-          translateX: [-30, 0],
-          delay: (_, i) => i * 60,
-          duration: 500,
-          ease: 'outQuad'
-        })
-      }
+      animateElements('.mobile-nav-item', {
+        translateY: [30, 0],
+        delay: (_, i) => i * 50,
+        duration: 600,
+        ease: 'spring(1, 80, 10, 0)'
+      })
     }
   }, [isMobileMenuOpen])
 
