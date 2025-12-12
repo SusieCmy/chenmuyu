@@ -155,7 +155,7 @@ const UserInfoPage = () => {
               <div className="relative shrink-0 group">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <Image
-                  src="/QQ.png"
+                  src="/chenmuyu.png"
                   alt="陈慕宇"
                   priority
                   width={140}

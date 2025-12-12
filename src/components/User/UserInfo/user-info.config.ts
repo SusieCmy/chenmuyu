@@ -24,7 +24,7 @@ export const personalInfo = {
   name: '陈慕宇',
   nameEn: 'Chen Muyu',
   title: '前端开发工程师',
-  avatar: '/QQ.png',
+  avatar: '/chenmuyu.png',
   location: '中国',
   experience: '2020 至今',
   email: '1732728869@qq.com',
